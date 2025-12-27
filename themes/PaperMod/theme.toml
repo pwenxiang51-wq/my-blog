@@ -1,0 +1,12 @@
+name = "PaperMod"
+license = "MIT"
+licenselink = "https://github.com/adityatelange/hugo-PaperMod/blob/master/LICENSE"
+description = "A fast, clean, responsive Hugo theme."
+homepage = "https://github.com/adityatelange/hugo-PaperMod"
+tags = ["blog", "minimalist", "responsive"]
+features = ["dark mode", "search", "archives"]
+author = "adityatelange"
+
+[author]
+    name = "adityatelange"
+    homepage = "https://github.com/adityatelange"
