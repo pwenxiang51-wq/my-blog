@@ -1,0 +1,12 @@
+baseURL = 'https://your-site.pages.dev/'
+languageCode = 'zh-cn'
+title = '我的个人空间'
+theme = "PaperMod"
+
+[params]
+    env = "production"
+    title = "我的博客"
+    description = "这是我用 PaperMod 搭建的第一个博客"
+    # 开启深色模式切换按钮
+    defaultTheme = "auto"
+    showThemeBundleMode = true
