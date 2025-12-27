@@ -1,12 +1,8 @@
-baseURL = 'https://your-site.pages.dev/'
+baseURL = 'https://my-blog-d5x.pages.dev/'
 languageCode = 'zh-cn'
-title = '我的个人空间'
-theme = "PaperMod"
+title = '我的个人博客'
+theme = "PaperMod"  # 注意：这里必须和文件夹名字 PaperMod 大小写完全一致！
 
 [params]
     env = "production"
     title = "我的博客"
-    description = "这是我用 PaperMod 搭建的第一个博客"
-    # 开启深色模式切换按钮
-    defaultTheme = "auto"
-    showThemeBundleMode = true
