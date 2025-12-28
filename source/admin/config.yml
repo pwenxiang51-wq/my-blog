@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: pwenxiang51-wq/my-blog  # 自动匹配你的仓库名
+  branch: master  # 自动匹配你的主分支
+
+media_folder: "source/images" # 以后上传图片会自动存到这里
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "文章"
+    folder: "source/_posts" # 自动识别你现有的博文
+    create: true # 允许在后台直接新建
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "日期", name: "date", widget: "datetime"}
+      - {label: "正文", name: "body", widget: "markdown"}
