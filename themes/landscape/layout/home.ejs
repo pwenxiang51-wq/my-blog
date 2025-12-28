@@ -1,0 +1,10 @@
+<!-- 首页布局文件，给body变量赋值，解决未定义问题 -->
+<h2>我的博客文章列表</h2>
+<ul class="post-list">
+  <% site.posts.each(function(post) { %>
+    <li class="post-item">
+      <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+      <p>发布时间：<%= post.date.format('YYYY-MM-DD') %></p>
+    </li>
+  <% }) %>
+</ul>
