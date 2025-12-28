@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: pwenxiang51-wq/my-blog  # 自动匹配你的仓库名
-  branch: master  # 自动匹配你的主分支
+  repo: pwenxiang51-wq/my-blog
+  branch: master
+  base_url: https://blog.222382.xyz
+  auth_endpoint: /api/auth
 
 media_folder: "source/images" # 以后上传图片会自动存到这里
 public_folder: "/images"
