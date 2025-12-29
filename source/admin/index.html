@@ -5,24 +5,24 @@ layout: false
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>博客后台管理</title>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/decap-cms-app@^3.0.0/dist/decap-cms-app.js"></script>
+  <title>CMS Admin</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
+  <div id="msg" style="text-align:center; margin-top:50px; font-family:sans-serif; color:#666;">
+    正在启动写作后台...
+  </div>
+
   <script>
-    // 定义配置
     var cmsConfig = {
       backend: {
         name: "github",
         repo: "pwenxiang51-wq/my-blog",
         branch: "master",
-        base_url: "https://blog.222382.xyz", // 你的域名
-        auth_endpoint: "api/auth"           // Grok 帮你搞好的认证接口
+        base_url: "https://blog.222382.xyz",
+        auth_endpoint: "api/auth"
       },
-      load_config_file: false,              // 强制不读 config.yml
+      load_config_file: false,
       media_folder: "source/images",
       public_folder: "/images",
       collections: [
@@ -31,8 +31,6 @@ layout: false
           label: "文章列表",
           folder: "source/_posts",
           create: true,
-          extension: "md",
-          format: "frontmatter",
           fields: [
             { label: "标题", name: "title", widget: "string" },
             { label: "日期", name: "date", widget: "datetime" },
@@ -42,8 +40,15 @@ layout: false
       ]
     };
 
-    // 初始化 CMS
-    window.CMS.init({ config: cmsConfig });
+    // 终极保险：循环检查 CMS 是否加载完毕，防止报错
+    var checkCMS = setInterval(function() {
+      if (window.CMS) {
+        clearInterval(checkCMS);
+        document.getElementById('msg').style.display = 'none'; // 隐藏提示
+        window.CMS.init({ config: cmsConfig });
+        console.log("CMS 启动成功！");
+      }
+    }, 100); // 每 0.1 秒检查一次
   </script>
 </body>
 </html>
