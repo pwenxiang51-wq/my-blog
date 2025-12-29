@@ -3,37 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <title>内容管理系统</title>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.3.3/dist/decap-cms.js"></script>
 </head>
 <body>
-  <script>
-    // 强制初始化配置，不再依赖外部 yml 文件
-    CMS.init({
-      config: {
-        backend: {
-          name: "github",
-          repo: "pwenxiang51-wq/my-blog",
-          branch: "master",
-          base_url: "https://blog-auth.wenxiang0100.workers.dev",
-          auth_endpoint: "auth"
-        },
-        media_folder: "source/images",
-        public_folder: "/images",
-        collections: [
-          {
-            name: "blog",
-            label: "我的文章",
-            folder: "source/_posts",
-            create: true,
-            fields: [
-              { label: "标题", name: "title", widget: "string" },
-              { label: "日期", name: "date", widget: "datetime" },
-              { label: "正文", name: "body", widget: "markdown" }
-            ]
-          }
-        ]
-      }
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@2.10.192/dist/decap-cms.js"></script>
 </body>
 </html>
