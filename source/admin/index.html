@@ -5,12 +5,13 @@ layout: false
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>CMS Admin</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <title>Admin Dashboard</title>
+  <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 </head>
 <body>
-  <div id="msg" style="text-align:center; margin-top:50px; font-family:sans-serif; color:#666;">
-    正在启动写作后台...
+  <div id="nc-root" style="text-align:center; margin-top:100px;">
+    <h2>正在连接后台...</h2>
+    <p>如果长时间没反应，请检查 F12 控制台</p>
   </div>
 
   <script>
@@ -40,15 +41,13 @@ layout: false
       ]
     };
 
-    // 终极保险：循环检查 CMS 是否加载完毕，防止报错
+    // 依然用这个循环检查，这是最稳的
     var checkCMS = setInterval(function() {
       if (window.CMS) {
         clearInterval(checkCMS);
-        document.getElementById('msg').style.display = 'none'; // 隐藏提示
         window.CMS.init({ config: cmsConfig });
-        console.log("CMS 启动成功！");
       }
-    }, 100); // 每 0.1 秒检查一次
+    }, 100);
   </script>
 </body>
 </html>
