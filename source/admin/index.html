@@ -1,59 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>管理后台-终极版</title>
-  <style>
-    body { margin: 0; background: #f4f7f6; }
-    #loading { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif; color: #666; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>博客管理后台</title>
 </head>
 <body>
-  <div id="loading">正在全力加载管理后台...</div>
-
-  <script src="https://lib.baomitu.com/react/18.2.0/umd/react.production.min.js"></script>
-  <script src="https://lib.baomitu.com/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://lib.baomitu.com/decap-cms/2.10.192/decap-cms.js"></script>
-
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // 脚本一旦加载，立即执行，不再等待循环
-    (function() {
-      const initInterval = setInterval(() => {
-        if (window.CMS) {
-          clearInterval(initInterval);
-          document.getElementById('loading').style.display = 'none';
-          
-          window.CMS.init({
-            config: {
-              backend: {
-                name: "github",
-                repo: "pwenxiang51-wq/my-blog",
-                branch: "master",
-                base_url: "https://blog.222382.xyz",
-                auth_endpoint: "api/auth"
-              },
-              load_config_file: false,
-              display_url: "https://blog.222382.xyz",
-              collections: [
-                {
-                  name: "blog",
-                  label: "文章管理",
-                  folder: "source/_posts",
-                  create: true,
-                  extension: "md",
-                  format: "frontmatter",
-                  fields: [
-                    { label: "标题", name: "title", widget: "string" },
-                    { label: "日期", name: "date", widget: "datetime" },
-                    { label: "正文", name: "body", widget: "markdown" }
-                  ]
-                }
-              ]
-            }
-          });
-        }
-      }, 100);
-    })();
+    // 确保脚本加载后立即初始化
+    window.CMS.init({
+      config: {
+        backend: {
+          name: "github",
+          repo: "pwenxiang51-wq/my-blog",
+          branch: "master",
+          // 严格匹配 Grok 的 functions/api 模式，不吃 Token
+          base_url: "https://blog.222382.xyz",
+          auth_endpoint: "api/auth" 
+        },
+        load_config_file: false,
+        media_folder: "source/images",
+        public_folder: "/images",
+        collections: [
+          {
+            name: "blog",
+            label: "文章管理",
+            folder: "source/_posts",
+            create: true,
+            extension: "md",
+            format: "frontmatter",
+            fields: [
+              { label: "标题", name: "title", widget: "string" },
+              { label: "日期", name: "date", widget: "datetime" },
+              { label: "正文", name: "body", widget: "markdown" }
+            ]
+          }
+        ]
+      }
+    });
   </script>
 </body>
 </html>
