@@ -32,7 +32,7 @@ export const onRequest: PagesFunction<{
     if (accessToken) {
       return new Response(
         `<script>
-          localStorage.setItem("decap-cms-auth", JSON.stringify({ token: "${accessToken}" }));
+          localStorage.setItem("netlify-cms-user", JSON.stringify({ token: "${accessToken}" }));
           window.location.href = "/admin/";
         </script>`,
         { headers: { "Content-Type": "text/html" } }
