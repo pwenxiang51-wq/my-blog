@@ -1,42 +1,48 @@
-<script>
-  function initCMS() {
-    if (window.CMS) {
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('root').style.display = 'block';
-      
-      // 在这里填入具体的配置信息
-      CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "pwenxiang51-wq/my-blog",
-            branch: "master",
-            base_url: "https://blog.222382.xyz", // 必须指向你的域名以匹配 functions 路径
-            auth_endpoint: "api/auth"           // 对应 functions/api/auth
-          },
-          load_config_file: false,
-          media_folder: "source/images",
-          public_folder: "/images",
-          collections: [
-            {
-              name: "blog",
-              label: "我的文章",
-              folder: "source/_posts",
-              create: true,
-              extension: "md",
-              format: "frontmatter",
-              fields: [
-                { label: "标题", name: "title", widget: "string" },
-                { label: "日期", name: "date", widget: "datetime" },
-                { label: "正文", name: "body", widget: "markdown" }
-              ]
-            }
-          ]
-        }
-      });
-    } else {
-      setTimeout(initCMS, 200);
-    }
-  }
-  initCMS();
-</script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>博客管理后台</title>
+  <style>
+    body { margin: 0; background: #f8f9fa; }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/decap-cms-app@^3.1.1/dist/decap-cms-app.js"></script>
+
+  <script>
+    // 强制直接初始化，不搞那些虚的判断
+    window.CMS.init({
+      config: {
+        backend: {
+          name: "github",
+          repo: "pwenxiang51-wq/my-blog",
+          branch: "master",
+          base_url: "https://blog.222382.xyz",
+          auth_endpoint: "api/auth"
+        },
+        load_config_file: false,
+        media_folder: "source/images",
+        public_folder: "/images",
+        collections: [
+          {
+            name: "blog",
+            label: "我的文章",
+            folder: "source/_posts",
+            create: true,
+            extension: "md",
+            format: "frontmatter",
+            fields: [
+              { label: "标题", name: "title", widget: "string" },
+              { label: "日期", name: "date", widget: "datetime" },
+              { label: "正文", name: "body", widget: "markdown" }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>
