@@ -2,6 +2,8 @@ backend:
   name: github
   repo: pwenxiang51-wq/my-blog
   branch: main
+  base_url: https://blog.222382.xyz
+  auth_endpoint: api/oauth
 
 media_folder: "source/images/uploads"
 public_folder: "/images/uploads"
