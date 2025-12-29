@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>内容管理后台</title>
   <style>
-    body { margin: 0; padding: 0; height: 100vh; background: #f8f9fa; }
+    body { margin: 0; padding: 0; height: 100vh; background: #f8f9fa; font-family: system-ui, sans-serif; }
   </style>
 </head>
 <body>
-  <script type="module" src="https://unpkg.com/sveltia-cms@0.38.4/dist/sveltia-cms.js"></script>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <script src="https://unpkg.com/decap-cms-app@3.1.1/dist/decap-cms-app.js"></script>
+
+  <script>
+    CMS.init();
+  </script>
 </body>
 </html>
