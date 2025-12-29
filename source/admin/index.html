@@ -1,47 +1,59 @@
-<script>
-  function initCMS() {
-    // 检查 CMS 插件是否加载完成
-    if (window.CMS) {
-      console.log("CMS 已经就绪，开始初始化...");
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('root').style.display = 'block';
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>管理后台-终极版</title>
+  <style>
+    body { margin: 0; background: #f4f7f6; }
+    #loading { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif; color: #666; }
+  </style>
+</head>
+<body>
+  <div id="loading">正在全力加载管理后台...</div>
 
-      window.CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "pwenxiang51-wq/my-blog",
-            branch: "master",
-            base_url: "https://blog.222382.xyz",
-            auth_endpoint: "api/auth"
-          },
-          load_config_file: false,
-          media_folder: "source/images",
-          public_folder: "/images",
-          collections: [
-            {
-              name: "blog",
-              label: "文章列表",
-              folder: "source/_posts",
-              create: true,
-              extension: "md",
-              format: "frontmatter",
-              fields: [
-                { label: "标题", name: "title", widget: "string" },
-                { label: "日期", name: "date", widget: "datetime" },
-                { label: "正文", name: "body", widget: "markdown" }
+  <script src="https://lib.baomitu.com/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://lib.baomitu.com/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://lib.baomitu.com/decap-cms/2.10.192/decap-cms.js"></script>
+
+  <script>
+    // 脚本一旦加载，立即执行，不再等待循环
+    (function() {
+      const initInterval = setInterval(() => {
+        if (window.CMS) {
+          clearInterval(initInterval);
+          document.getElementById('loading').style.display = 'none';
+          
+          window.CMS.init({
+            config: {
+              backend: {
+                name: "github",
+                repo: "pwenxiang51-wq/my-blog",
+                branch: "master",
+                base_url: "https://blog.222382.xyz",
+                auth_endpoint: "api/auth"
+              },
+              load_config_file: false,
+              display_url: "https://blog.222382.xyz",
+              collections: [
+                {
+                  name: "blog",
+                  label: "文章管理",
+                  folder: "source/_posts",
+                  create: true,
+                  extension: "md",
+                  format: "frontmatter",
+                  fields: [
+                    { label: "标题", name: "title", widget: "string" },
+                    { label: "日期", name: "date", widget: "datetime" },
+                    { label: "正文", name: "body", widget: "markdown" }
+                  ]
+                }
               ]
             }
-          ]
+          });
         }
-      });
-    } else {
-      // 如果还没加载完，等 200 毫秒再试，这就是 Grok 的稳健逻辑
-      console.log("正在等待 CMS 加载...");
-      setTimeout(initCMS, 200);
-    }
-  }
-  
-  // 启动检查
-  initCMS();
-</script>
+      }, 100);
+    })();
+  </script>
+</body>
+</html>
