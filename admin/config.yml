@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: pwenxiang51-wq/my-blog  # 确认这里是你的 用户名/仓库名
+  branch: master                # 你的分支名是 master
+
+media_folder: "source/images"   # 图片存放位置
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "我的文章"
+    folder: "source/_posts"      # 文章存放位置
+    create: true                 # 允许新建
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "正文内容", name: "body", widget: "markdown"}
