@@ -6,12 +6,16 @@ export const onRequest: PagesFunction<{
   const url = new URL(request.url);
   const code = url.searchParams.get("code");
 
+  // 第一步：跳转到 GitHub 授权页
   if (url.pathname === "/api/oauth") {
-    return Response.redirect(
-      `https://github.com/login/oauth/authorize?client_id=${env.GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(url.origin + "/api/oauth/callback")}`
-    );
+    const authUrl = new URL("https://github.com/login/oauth/authorize");
+    authUrl.searchParams.set("client_id", env.GITHUB_CLIENT_ID);
+    authUrl.searchParams.set("redirect_uri", url.origin + "/api/oauth/callback");
+    authUrl.searchParams.set("scope", "repo");
+    return Response.redirect(authUrl.toString());
   }
 
+  // 第二步：接收 code，换取 access_token，并保存到 localStorage
   if (url.pathname === "/api/oauth/callback" && code) {
     const tokenResponse = await fetch("https://github.com/login/oauth/access_token", {
       method: "POST",
@@ -38,7 +42,9 @@ export const onRequest: PagesFunction<{
         { headers: { "Content-Type": "text/html" } }
       );
     }
+
+    return new Response("Failed to get access token", { status: 400 });
   }
 
-  return new Response("Authentication failed", { status: 400 });
+  return new Response("Not found", { status: 404 });
 };
