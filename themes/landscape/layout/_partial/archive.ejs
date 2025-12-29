@@ -1,0 +1,8 @@
+<section class="archives-wrap">
+  <% page.posts.forEach(function(post){ %>
+    <article class="archive-article">
+      <h2><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+      <time><%= date(post.date, 'YYYY-MM-DD') %></time>
+    </article>
+  <% }) %>
+</section>
