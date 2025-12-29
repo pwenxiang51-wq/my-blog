@@ -20,3 +20,5 @@ collections:
       - {label: "标签", name: "tags", widget: "list"}
       - {label: "分类", name: "categories", widget: "list", required: false}
       - {label: "正文", name: "body", widget: "markdown"}
+      skip_render:
+  - admin/**
