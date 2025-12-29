@@ -2,41 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Admin</title>
+  <title>Content Manager</title>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    window.CMS.init({
-      config: {
-        backend: {
-          name: "github",
-          repo: "pwenxiang51-wq/my-blog",
-          branch: "master",
-          base_url: "https://blog.222382.xyz",
-          auth_endpoint: "api/auth"
-        },
-        load_config_file: false,
-        display_url: "https://blog.222382.xyz",
-        media_folder: "source/images",
-        public_folder: "/images",
-        collections: [
-          {
-            name: "blog",
-            label: "Blog",
-            folder: "source/_posts",
-            create: true,
-            extension: "md",
-            format: "frontmatter",
-            fields: [
-              { label: "Title", name: "title", widget: "string" },
-              { label: "Date", name: "date", widget: "datetime" },
-              { label: "Body", name: "body", widget: "markdown" }
-            ]
-          }
-        ]
-      }
-    });
+    // 使用最死板的配置格式，杜绝任何 YAML 解析歧义
+    var cmsConfig = {
+      backend: {
+        name: "github",
+        repo: "pwenxiang51-wq/my-blog",
+        branch: "master",
+        base_url: "https://blog.222382.xyz",
+        auth_endpoint: "api/auth"
+      },
+      load_config_file: false,
+      media_folder: "source/images",
+      public_folder: "/images",
+      collections: [
+        {
+          name: "posts",
+          label: "Post",
+          folder: "source/_posts",
+          create: true,
+          fields: [
+            { label: "Title", name: "title", widget: "string" },
+            { label: "Body", name: "body", widget: "markdown" }
+          ]
+        }
+      ]
+    };
+    
+    window.CMS.init({ config: cmsConfig });
   </script>
 </body>
 </html>
