@@ -2,7 +2,6 @@ backend:
   name: github
   repo: pwenxiang51-wq/my-blog
   branch: master
-  # 指向你刚刚创建的 Cloudflare Worker 门卫
   base_url: https://blog-auth.wenxiang0100.workers.dev
   auth_endpoint: auth
 
@@ -17,5 +16,5 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布日期", name: "date", widget: "datetime"}
-      - {label: "正文内容", name: "body", widget: "markdown"}
+      - {label: "日期", name: "date", widget: "datetime"}
+      - {label: "正文", name: "body", widget: "markdown"}
