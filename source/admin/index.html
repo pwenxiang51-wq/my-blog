@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>内容管理后台</title>
   <style>
-    body { margin: 0; padding: 0; height: 100vh; background: #f8f9fa; }
+    body { margin: 0; padding: 0; height: 100vh; background: #f8f9fa; font-family: system-ui, sans-serif; }
   </style>
 </head>
 <body>
   <div id="root"></div>
 
-  <!-- React 必须先加载 -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-  <!-- 用 app 版本，避免所有解析错误 -->
   <script src="https://unpkg.com/decap-cms-app@3.3.0/dist/decap-cms-app.js"></script>
 
   <script>
-    CMS.init();
+    // 关键：新版全局变量是 DecapCMS
+    DecapCMS.init();
   </script>
 </body>
 </html>
