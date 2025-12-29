@@ -2,38 +2,36 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>博客管理后台</title>
+  <title>Admin</title>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // 确保脚本加载后立即初始化
     window.CMS.init({
       config: {
         backend: {
           name: "github",
           repo: "pwenxiang51-wq/my-blog",
           branch: "master",
-          // 严格匹配 Grok 的 functions/api 模式，不吃 Token
           base_url: "https://blog.222382.xyz",
-          auth_endpoint: "api/auth" 
+          auth_endpoint: "api/auth"
         },
         load_config_file: false,
+        display_url: "https://blog.222382.xyz",
         media_folder: "source/images",
         public_folder: "/images",
         collections: [
           {
             name: "blog",
-            label: "文章管理",
+            label: "Blog",
             folder: "source/_posts",
             create: true,
             extension: "md",
             format: "frontmatter",
             fields: [
-              { label: "标题", name: "title", widget: "string" },
-              { label: "日期", name: "date", widget: "datetime" },
-              { label: "正文", name: "body", widget: "markdown" }
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Date", name: "date", widget: "datetime" },
+              { label: "Body", name: "body", widget: "markdown" }
             ]
           }
         ]
