@@ -7,7 +7,7 @@
 </head>
 <body>
   <script>
-    // 在这里强制注入配置，防止它去读错位的 config.yml
+    // 强制初始化配置，不再依赖外部 yml 文件
     CMS.init({
       config: {
         backend: {
@@ -22,7 +22,7 @@
         collections: [
           {
             name: "blog",
-            label: "我的文章集",
+            label: "我的文章",
             folder: "source/_posts",
             create: true,
             fields: [
