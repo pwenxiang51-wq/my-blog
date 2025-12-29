@@ -1,19 +1,15 @@
----
-layout: false
----
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  
   <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
 </head>
 <body>
-  <div id="nc-root" style="text-align:center; margin-top:100px;">
-    <h2>正在连接后台...</h2>
-    <p>如果长时间没反应，请检查 F12 控制台</p>
-  </div>
-
   <script>
     var cmsConfig = {
       backend: {
@@ -23,7 +19,7 @@ layout: false
         base_url: "https://blog.222382.xyz",
         auth_endpoint: "api/auth"
       },
-      load_config_file: false,
+      load_config_file: false, // 再次强调：别读文件！
       media_folder: "source/images",
       public_folder: "/images",
       collections: [
@@ -31,7 +27,7 @@ layout: false
           name: "posts",
           label: "文章列表",
           folder: "source/_posts",
-          create: true,
+          create: true, 
           fields: [
             { label: "标题", name: "title", widget: "string" },
             { label: "日期", name: "date", widget: "datetime" },
@@ -40,14 +36,9 @@ layout: false
         }
       ]
     };
-
-    // 依然用这个循环检查，这是最稳的
-    var checkCMS = setInterval(function() {
-      if (window.CMS) {
-        clearInterval(checkCMS);
-        window.CMS.init({ config: cmsConfig });
-      }
-    }, 100);
+    
+    // 手动转动钥匙，启动系统
+    CMS.init({ config: cmsConfig });
   </script>
 </body>
 </html>
