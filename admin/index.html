@@ -6,12 +6,15 @@
   <title>博客管理后台</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // 强制清理之前的白屏状态
-    if (window.localStorage) {
-      window.localStorage.removeItem('netlify-cms-user');
-    }
+    // 如果 5 秒后还是白屏，强制清理本地缓存并刷新
+    setTimeout(() => {
+      if (!document.querySelector('.nc-app-container')) {
+        console.log("检测到加载缓慢，正在尝试清理缓存...");
+        localStorage.clear();
+      }
+    }, 5000);
   </script>
 </body>
 </html>
