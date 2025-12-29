@@ -17,7 +17,15 @@
   <script src="https://unpkg.com/decap-cms-app@3.1.1/dist/decap-cms-app.js"></script>
 
   <script>
-    CMS.init();
+    // 延迟初始化，解决 CMS not defined
+    const initCMS = () => {
+      if (window.CMS) {
+        CMS.init();
+      } else {
+        setTimeout(initCMS, 100);
+      }
+    };
+    initCMS();
   </script>
 </body>
 </html>
