@@ -898,19 +898,17 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
- giscus:
   repo: pwenxiang51-wq/my-blog
-  repo_id: "R_kgDOQwI2eQ"         # <--- 必须是下划线 repo_id
+  repo_id: "R_kgDOQwI2eQ"
   category: Announcements
-  category_id: "DIC_kwDOQwI2ec4COfFp" # <--- 必须是下划线 category_id
-  theme_light: light              # <--- 下划线 theme_light
-  theme_dark: dark                # <--- 下划线 theme_dark
+  category_id: "DIC_kwDOQwI2ec4COfFp"
+  theme_light: light
+  theme_dark: dark
   mapping: pathname
-  reactions_enabled: true         # <--- 下划线，且建议写 true
-  emit_metadata: false            # <--- 下划线
-  input_position: top             # <--- 下划线
+  reactions_enabled: true
+  emit_metadata: false
+  input_position: top
   lang: zh-CN
-
 # Discuss
 # 多平台、多数据库、自托管、免费开源评论系统
 # Self-hosted, small size, multi-platform, multi-database, free and open source commenting system
