@@ -594,6 +594,10 @@ post:
       # 每分钟阅读字数，如果大部分是技术文章可适度调低
       # Words per minute
       wpm: 60
+      # 评论组件
+  comments:
+    enable: true
+    type: giscus
 
     # 浏览量计数
     # Number of visits
