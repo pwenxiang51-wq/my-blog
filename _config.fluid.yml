@@ -606,7 +606,11 @@ post:
 
   # 在文章开头显示文章更新时间，该时间默认是 md 文件更新时间，可通过 front-matter 中 `updated` 手动指定（和 date 一样格式）
   # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
-  # 评论组件
+  # 评论组
+  # 👇 贴在这里！
+  comments:
+    enable: true
+    type: giscus
     
   updated:
     enable: false
@@ -1123,10 +1127,3 @@ static_prefix:
   hint: https://lib.baomitu.com/hint.css/2.7.0/
 
   moment: https://lib.baomitu.com/moment.js/2.29.4/
-
-  # -----------------------------
-# 补上丢失的全局总闸（这就相当于插上了电源）
-# -----------------------------
-comments:
-  enable: true
-  type: giscus
