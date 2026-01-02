@@ -746,7 +746,7 @@ post:
 
   # 评论插件
   # Comment plugin
- comments:
+comments:
   enable: true    # <--- 注意缩进！前面有两个空格
   type: giscus    # <--- 注意缩进！前面有两个空格
 
