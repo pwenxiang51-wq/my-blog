@@ -747,11 +747,12 @@ post:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
-    # 指定的插件，需要同时设置对应插件的必要参数
-    # The specified plugin needs to set the necessary parameters at the same time
-    # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus | discuss
-    type: disqus
+    comments:
+  enable: true     # <--- 原来是 false，改成 true (打开评论功能)
+  
+  # 指定的插件...
+  # ...
+  type: giscus     # <--- 原来是 disqus，改成 giscus (指定使用 GitHub 评论)
 
 
 #---------------------------
@@ -897,16 +898,17 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
-  repo:
-  repo-id:
-  category:
-  category-id:
-  theme-light: light
-  theme-dark: dark
+ giscus:
+  repo: pwenxiang51-wq/my-blog
+  repo_id: "R_kgDOQwI2eQ"         # <--- 必须是下划线 repo_id
+  category: Announcements
+  category_id: "DIC_kwDOQwI2ec4COfFp" # <--- 必须是下划线 category_id
+  theme_light: light              # <--- 下划线 theme_light
+  theme_dark: dark                # <--- 下划线 theme_dark
   mapping: pathname
-  reactions-enabled: 1
-  emit-metadata: 0
-  input-position: top
+  reactions_enabled: true         # <--- 下划线，且建议写 true
+  emit_metadata: false            # <--- 下划线
+  input_position: top             # <--- 下划线
   lang: zh-CN
 
 # Discuss
