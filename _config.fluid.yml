@@ -757,9 +757,6 @@ post:
 #
 # 开启评论需要先设置上方 `post: comments: enable: true`，然后根据 `type` 设置下方对应的评论插件参数
 # Enable comments need to be set `post: comments: enable: true`, then set the corresponding comment plugin parameters below according to `type`
-comments:
-  enable: true
-  type: giscus
 # Utterances
 # 基于 GitHub Issues
 # Based on GitHub Issues
