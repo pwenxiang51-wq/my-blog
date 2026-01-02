@@ -746,13 +746,9 @@ post:
 
   # 评论插件
   # Comment plugin
-  comments:
-    comments:
-  enable: true     # <--- 原来是 false，改成 true (打开评论功能)
-  
-  # 指定的插件...
-  # ...
-  type: giscus     # <--- 原来是 disqus，改成 giscus (指定使用 GitHub 评论)
+ comments:
+  enable: true    # <--- 注意缩进！前面有两个空格
+  type: giscus    # <--- 注意缩进！前面有两个空格
 
 
 #---------------------------
