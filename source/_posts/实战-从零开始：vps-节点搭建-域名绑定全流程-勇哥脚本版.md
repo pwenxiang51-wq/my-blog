@@ -57,11 +57,13 @@ bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb
 
 ### 💡 以后怎么管理？
 
-任何时候想修改配置或查看状态，只需要在 SSH 里输：
+任何时候想修改配置或查看状态，只需要在 SSH 里输入：
 
 
 sudo -i
 
+
+获取root权限后再次输入
 sb
 
 就能瞬间唤出管理菜单。
