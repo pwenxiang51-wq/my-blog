@@ -1,0 +1,70 @@
+---
+title: 配置 Fail2Ban 防止 SSH 暴力破解
+date: 2026-01-04T15:25:00.000+08:00
+---
+
+
+
+VPS 裸奔在公网上，每天都会有无数个脚本尝试暴力破解你的 SSH 密码。如果你已经修改了 SSH 默认端口（比如改为 56789），虽然能躲过大部分扫描，但加上 Fail2Ban 才是双重保险。
+
+Fail2Ban 的原理很简单：监控日志 -> 发现有人多次输错密码 -> 自动推算 IP 关进小黑屋。
+
+### 环境说明
+
+* 系统：Debian 11
+* SSH 端口：56789 (根据实际情况修改)
+
+### 第一步：更新源并安装 Fail2Ban
+
+首先更新系统软件包列表，然后直接安装：
+
+`apt update && apt install fail2ban -y`
+
+### 第二步：配置防护规则 (重点)
+
+Fail2Ban 默认只监控 22 端口，因为我们改了端口（56789），所以必须新建一个配置文件来告诉它监控哪里。
+
+直接复制下面整段代码，粘贴到 SSH 终端并回车：
+
+cat > /etc/fail2ban/jail.local <<EOF
+
+\[sshd]
+
+enabled = true
+
+port = 56789
+
+filter = sshd
+
+logpath = /var/log/auth.log
+
+maxretry = 5
+
+bantime = 3600
+
+findtime = 600
+
+EOF
+
+*(注意：如果你的 SSH 端口不是 56789，请修改 port = 56789 这一行)*
+
+### 第三步：启动并设置开机自启
+
+配置写好后，重启服务即可生效：
+
+`systemctl restart fail2ban && systemctl enable fail2ban`
+
+### 第四步：验证是否有效
+
+你可以使用以下命令查看 SSH 防护模块的状态：
+
+`fail2ban-client status sshd`
+
+如果看到 Status 显示为 active，说明防护罩已经打开了。
+
+附：Fail2Ban 常用维护命令
+
+1. 解封某个 IP (比如把你自己的解封)：
+   `fail2ban-client set sshd unbanip 1.2.3.4`
+2. 查看 Fail2Ban 运行日志 (排错用)：
+   `tail -f /var/log/fail2ban.log`
