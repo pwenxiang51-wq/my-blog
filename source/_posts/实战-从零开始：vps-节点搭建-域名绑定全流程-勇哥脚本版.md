@@ -2,14 +2,9 @@
 title: "[实战] 从零开始：VPS 节点搭建 + 域名绑定全流程 (勇哥脚本版)"
 date: 2025-12-02T20:04:00.000+08:00
 ---
-
-
 VPS 买了不能只当摆设。今天分享一套最稳的方案：利用 勇哥 (yonggekkk) 一键脚本 搭建 Sing-box 节点，并配合 Cloudflare 绑定自定义域名。
 
 这样不仅搭建简单（一行代码），而且以后连接节点用的就是你自己帅气的域名（如 vps.222382.xyz），而不是冷冰冰的 IP 数字。
-
-
-
 
 ### 第一步：域名解析 (Cloudflare)
 
@@ -25,9 +20,6 @@ VPS 买了不能只当摆设。今天分享一套最稳的方案：利用 勇哥
    * 代理状态 (Proxy status)：重点！一定要把“小黄云”点灰（仅 DNS）。
 4. 点击保存。
 
-
-
-
 ### 第二步：使用 CMD 连接 VPS
 
 Windows 用户不需要下载第三方软件，直接用系统自带的 CMD。
@@ -39,19 +31,11 @@ ssh root@你的VPSIP -p端口
 
 1. 输入密码登录。
 
-
-
-
 ### 第三步：运行一键脚本
 
 进入 VPS 后，复制下面这行代码，在 CMD 里 右键粘贴 并回车：
 
-
 bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
-
-
-
-
 
 ### 第四步：安装与绑定
 
@@ -65,23 +49,18 @@ bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb
    * 输入你第一步设置好的完整域名（例如 vps.222382.xyz）。
 4. 脚本会自动申请 SSL 证书并完成配置
 
-
-
-
-
 ### 第五步：获取链接
 
 一切完成后，屏幕上会显示红绿色的节点信息。
 
 找到 “复制通用链接” 那一行，复制下来，导入到 Shadowrocket 或 v2rayN。你会发现，现在的节点地址已经是你的域名了！
 
-
-
-
-
 ### 💡 以后怎么管理？
 
 任何时候想修改配置或查看状态，只需要在 SSH 里输：
+
+
+sudo -i
 
 sb
 
