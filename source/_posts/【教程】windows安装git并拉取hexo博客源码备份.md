@@ -1,5 +1,5 @@
 ---
-title: 【教程】Windows安装Git并拉取Hexo博客源码备份
+title: Windows安装Git并拉取Hexo博客源码备份
 date: 2026-01-05T16:56:00.000+08:00
 ---
 
