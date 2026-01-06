@@ -73,8 +73,7 @@ bash <(wget -qO- [https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/s
 
 找到 “复制通用链接” 的那一行复制下来，导入到你的 Shadowrocket (小火箭) 或 v2rayN 中即可使用！
 
-脚本跑完后的状态，如下图所示
-![](/images/屏幕截图-2026-01-06-143408.png)
+脚本跑完后的状态，如下图所示：![](/images/屏幕截图-2026-01-06-143408.png)
 
 💡 以后怎么管理？
 任何时候想修改配置或查看状态，只需要在 SSH 里输入：
