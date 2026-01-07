@@ -151,21 +151,17 @@ footer:
     enable: false
 
 #---------------------------
-# 首页配置 (赛博朋克图 + 打字机)
+# 首页配置
 #---------------------------
 index:
-  # 首页 Banner (贩卖机)
   banner_img: /images/banner.jpg
   banner_img_height: 100
   banner_img_mask: 0.3
-  
-  # 打字机 Slogan
   slogan:
     enable: true
     text: "欢迎来到 Velo.x 的极客空间 || 探索 VPS 与黑科技的无尽边界"
     api:
       enable: false
-  
   auto_excerpt:
     enable: true
   post_url_target: _self
@@ -178,16 +174,13 @@ index:
     icon: "iconfont icon-top"
 
 #---------------------------
-# 文章详情页 (火箭图 + 评论区)
+# 文章详情页
 #---------------------------
 post:
-  # 文章 Banner (火箭)
   banner_img: /images/article.jpg
   banner_img_height: 70
   banner_img_mask: 0.3
-  
   default_index_img:
-
   meta:
     author:
       enable: false
@@ -201,7 +194,7 @@ post:
     views:
       enable: false
 
-  # 评论区总开关 (已修正为 giscus)
+  # 👇 重点：这里已开启新评论 Giscus！
   comments:
     enable: true
     type: giscus
@@ -234,7 +227,7 @@ post:
     enable: false
 
 #---------------------------
-# 其他页面背景 (统一用火箭图)
+# 其他页面背景
 #---------------------------
 archive:
   banner_img: /images/article.jpg
@@ -268,8 +261,11 @@ about:
   avatar: /img/avatar.png
   name: "Velo.x"
   intro: "极客 / VPS / 探索者"
+  
+  # 👇 TG 按钮已完美植入在这里！
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
+    - { class: "iconfont icon-telegram-fill", link: "https://t.me/Velox95", tip: "Telegram" }
 
 page:
   banner_img: /images/article.jpg
@@ -292,6 +288,20 @@ links:
   comments:
     enable: true
     type: giscus
+
+#---------------------------
+# 评论插件配置 (新功能 Giscus)
+#---------------------------
+giscus:
+  repo: pwenxiang51-wq/my-blog
+  repo_id: 'R_kgDOQwI2eQ'
+  category: 'Announcements'
+  category_id: 'DIC_kwDOQwI2ec4C0fFp'
+  mapping: pathname
+  reactions_enabled: true
+  emit_metadata: false
+  theme: light
+  lang: zh-CN
 
 #---------------------------
 # 静态资源
@@ -322,25 +332,3 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
-
-# ========================
-# 👇 Giscus 和 社交按钮 配置
-# ========================
-
-# TG 按钮
-social:
-  telegram:
-    icon: fab fa-telegram
-    link: https://t.me/Velox95
-
-# Giscus 参数
-giscus:
-  repo: pwenxiang51-wq/my-blog
-  repo_id: 'R_kgDOQwI2eQ'
-  category: 'Announcements'
-  category_id: 'DIC_kwDOQwI2ec4C0fFp'
-  mapping: pathname
-  reactions_enabled: true
-  emit_metadata: false
-  theme: light
-  lang: zh-CN
