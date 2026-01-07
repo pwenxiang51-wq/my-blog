@@ -333,7 +333,11 @@ static_prefix:
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
 
-  # Giscus 详细参数 (新功能，放心贴)
+# ========================
+# 👇 粘贴在文件最后一行 👇
+# ========================
+
+# Giscus 的参数 (新功能)
 giscus:
   repo: pwenxiang51-wq/my-blog
   repo_id: 'R_kgDOQwI2eQ'
@@ -345,7 +349,7 @@ giscus:
   theme: light
   lang: zh-CN
 
-# TG 按钮 (既然你搜不到social，贴这里试试)
+# TG 按钮 (既然你搜不到 social，那就贴这里)
 social:
   telegram:
     icon: fab fa-telegram
