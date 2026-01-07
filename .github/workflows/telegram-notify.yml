@@ -3,7 +3,7 @@ name: Telegram Notification
 on:
   push:
     branches:
-      - main  # 如果你的分支是 master，记得这里改成 master
+      - main  # 你的分支名
 
 jobs:
   notify:
@@ -14,11 +14,12 @@ jobs:
         with:
           to: ${{ secrets.TG_USER_ID }}
           token: ${{ secrets.TG_BOT_TOKEN }}
+          # 【重点】下面这行 format: html 我删掉了！
+          # 【重点】message 里也没用尖括号了！
           message: |
-            🚀 博客更新通知
+            博客更新啦！
             
-            提交者: ${{ github.actor }}
-            提交内容: ${{ github.event.head_commit.message }}
+            提交人: ${{ github.actor }}
+            说明: ${{ github.event.head_commit.message }}
             
-            Cloudflare 正在后台构建中，请稍后访问...
-            仓库地址: https://github.com/${{ github.repository }}
+            Cloudflare 正在构建中...
