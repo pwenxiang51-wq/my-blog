@@ -201,7 +201,7 @@ post:
     views:
       enable: false
 
-  # 评论区总开关 (已修改为 giscus)
+  # 评论区总开关 (已修正为 giscus)
   comments:
     enable: true
     type: giscus
