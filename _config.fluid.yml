@@ -201,10 +201,10 @@ post:
     views:
       enable: false
 
-  # 评论区总开关
+  # 评论区总开关 (已修改为 giscus)
   comments:
     enable: true
-    type: utterances
+    type: giscus
 
   updated:
     enable: false
@@ -294,16 +294,6 @@ links:
     type: giscus
 
 #---------------------------
-# 评论插件配置 (GitHub 仓库)
-#---------------------------
-utterances:
-  repo: pwenxiang51-wq/my-blog
-  issue_term: pathname
-  label: utterances
-  theme: github-light
-  theme_dark: github-dark
-
-#---------------------------
 # 静态资源
 #---------------------------
 static_prefix:
@@ -334,10 +324,16 @@ static_prefix:
   moment: https://lib.baomitu.com/moment.js/2.29.4/
 
 # ========================
-# 👇 粘贴在文件最后一行 👇
+# 👇 Giscus 和 社交按钮 配置
 # ========================
 
-# Giscus 的参数 (新功能)
+# TG 按钮
+social:
+  telegram:
+    icon: fab fa-telegram
+    link: https://t.me/Velox95
+
+# Giscus 参数
 giscus:
   repo: pwenxiang51-wq/my-blog
   repo_id: 'R_kgDOQwI2eQ'
@@ -348,9 +344,3 @@ giscus:
   emit_metadata: false
   theme: light
   lang: zh-CN
-
-# TG 按钮 (既然你搜不到 social，那就贴这里)
-social:
-  telegram:
-    icon: fab fa-telegram
-    link: https://t.me/Velox95
