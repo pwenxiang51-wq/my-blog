@@ -1,0 +1,25 @@
+name: Telegram Notification
+
+on:
+  push:
+    branches:
+      - main  # 监听你的主分支，如果有变动就触发
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TG_USER_ID }}
+          token: ${{ secrets.TG_BOT_TOKEN }}
+          message: |
+            📢 <b>博客更新通知</b>
+            
+            👤 <b>提交者:</b> ${{ github.actor }}
+            📝 <b>内容:</b> ${{ github.event.head_commit.message }}
+            🔗 <b>仓库:</b> <a href="https://github.com/${{ github.repository }}">点击查看源码</a>
+            
+            🚀 Cloudflare 正在构建中，请稍候 1 分钟访问！
+          format: html
