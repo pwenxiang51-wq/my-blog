@@ -1,5 +1,7 @@
 #---------------------------
 # Hexo Theme Fluid
+# Author: Fluid-dev
+# Github: https://github.com/fluid-dev/hexo-theme-fluid
 #---------------------------
 
 #---------------------------
@@ -149,17 +151,21 @@ footer:
     enable: false
 
 #---------------------------
-# 首页配置
+# 首页配置 (赛博朋克图 + 打字机)
 #---------------------------
 index:
+  # 首页 Banner (贩卖机)
   banner_img: /images/banner.jpg
   banner_img_height: 100
   banner_img_mask: 0.3
+  
+  # 打字机 Slogan
   slogan:
     enable: true
     text: "欢迎来到 Velo.x 的极客空间 || 探索 VPS 与黑科技的无尽边界"
     api:
       enable: false
+  
   auto_excerpt:
     enable: true
   post_url_target: _self
@@ -172,12 +178,14 @@ index:
     icon: "iconfont icon-top"
 
 #---------------------------
-# 文章详情页
+# 文章详情页 (火箭图 + 评论区)
 #---------------------------
 post:
+  # 文章 Banner (火箭)
   banner_img: /images/article.jpg
   banner_img_height: 70
   banner_img_mask: 0.3
+  
   default_index_img:
 
   meta:
@@ -193,10 +201,10 @@ post:
     views:
       enable: false
 
-  # 评论区总开关 (已修复：指向 giscus)
+  # 评论区总开关
   comments:
     enable: true
-    type: giscus
+    type: utterances
 
   updated:
     enable: false
@@ -226,7 +234,7 @@ post:
     enable: false
 
 #---------------------------
-# 其他页面背景
+# 其他页面背景 (统一用火箭图)
 #---------------------------
 archive:
   banner_img: /images/article.jpg
@@ -260,11 +268,8 @@ about:
   avatar: /img/avatar.png
   name: "Velo.x"
   intro: "极客 / VPS / 探索者"
-  
-  # TG 按钮配置区 (已添加)
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "fab fa-telegram", link: "https://t.me/Velox95", tip: "Telegram" }
 
 page:
   banner_img: /images/article.jpg
@@ -286,7 +291,17 @@ links:
   items: []
   comments:
     enable: true
-    type: giscus
+    type: utterances
+
+#---------------------------
+# 评论插件配置 (GitHub 仓库)
+#---------------------------
+utterances:
+  repo: pwenxiang51-wq/my-blog
+  issue_term: pathname
+  label: utterances
+  theme: github-light
+  theme_dark: github-dark
 
 #---------------------------
 # 静态资源
@@ -317,17 +332,3 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
-
-#---------------------------
-# 评论插件配置 (Giscus)
-#---------------------------
-giscus:
-  repo: pwenxiang51-wq/my-blog
-  repo_id: 'R_kgDOQwI2eQ'
-  category: 'Announcements'
-  category_id: 'DIC_kwDOQwI2ec4C0fFp'
-  mapping: pathname
-  reactions_enabled: true
-  emit_metadata: false
-  theme: light
-  lang: zh-CN
