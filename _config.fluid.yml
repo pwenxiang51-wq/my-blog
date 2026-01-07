@@ -302,6 +302,32 @@ utterances:
   label: utterances
   theme: github-light
   theme_dark: github-dark
+  # -----------------------------------------------------------
+# ⬇️ 粘贴到这里，会自动替换掉旧的评论系统 ⬇️
+# -----------------------------------------------------------
+
+giscus:
+  repo: pwenxiang51-wq/my-blog
+  repo_id: 'R_kgDOQwI2eQ'
+  category: 'Announcements'
+  category_id: 'DIC_kwDOQwI2ec4C0fFp'
+  mapping: pathname
+  reactions_enabled: true
+  emit_metadata: false
+  theme: light
+  lang: zh-CN
+
+# 👇 这一步最关键！强制把评论切换为 giscus
+post:
+  comments:
+    enable: true
+    type: giscus
+
+# 👇 添加 TG 按钮
+social:
+  telegram:
+    icon: fab fa-telegram
+    link: https://t.me/Velox95
 
 #---------------------------
 # 静态资源
