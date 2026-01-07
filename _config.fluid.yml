@@ -332,17 +332,8 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
-  # ========================================
-# 👇 粘贴到文件最末尾 (因为搜不到 social，所以这里加)
-# ========================================
 
-# 1. TG 社交按钮
-social:
-  telegram:
-    icon: fab fa-telegram
-    link: https://t.me/Velox95
-
-# 2. Giscus 详细参数
+  # Giscus 详细参数 (新功能，放心贴)
 giscus:
   repo: pwenxiang51-wq/my-blog
   repo_id: 'R_kgDOQwI2eQ'
@@ -353,4 +344,9 @@ giscus:
   emit_metadata: false
   theme: light
   lang: zh-CN
- 
+
+# TG 按钮 (既然你搜不到social，贴这里试试)
+social:
+  telegram:
+    icon: fab fa-telegram
+    link: https://t.me/Velox95
