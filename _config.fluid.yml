@@ -291,7 +291,7 @@ links:
   items: []
   comments:
     enable: true
-    type: utterances
+    type: giscus
 
 #---------------------------
 # 评论插件配置 (GitHub 仓库)
@@ -332,17 +332,17 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
-  # =================================================
-# 👇 请粘贴在文件的最末尾，不要插在中间 👇
-# =================================================
+  # ========================================
+# 👇 粘贴到文件最末尾 (因为搜不到 social，所以这里加)
+# ========================================
 
-# 覆盖之前的评论设置
-post:
-  comments:
-    enable: true
-    type: giscus
+# 1. TG 社交按钮
+social:
+  telegram:
+    icon: fab fa-telegram
+    link: https://t.me/Velox95
 
-# 添加 Giscus 配置
+# 2. Giscus 详细参数
 giscus:
   repo: pwenxiang51-wq/my-blog
   repo_id: 'R_kgDOQwI2eQ'
@@ -353,9 +353,4 @@ giscus:
   emit_metadata: false
   theme: light
   lang: zh-CN
-
-# 覆盖之前的社交设置 (注意：这会覆盖掉默认的 icon)
-social:
-  telegram:
-    icon: fab fa-telegram
-    link: https://t.me/Velox95
+ 
