@@ -3,7 +3,7 @@ name: Telegram Notification
 on:
   push:
     branches:
-      - main  # 监听你的主分支，如果有变动就触发
+      - master  # 监听你的主分支，如果有变动就触发
 
 jobs:
   notify:
