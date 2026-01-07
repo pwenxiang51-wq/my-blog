@@ -302,32 +302,6 @@ utterances:
   label: utterances
   theme: github-light
   theme_dark: github-dark
-  # -----------------------------------------------------------
-# ⬇️ 粘贴到这里，会自动替换掉旧的评论系统 ⬇️
-# -----------------------------------------------------------
-
-giscus:
-  repo: pwenxiang51-wq/my-blog
-  repo_id: 'R_kgDOQwI2eQ'
-  category: 'Announcements'
-  category_id: 'DIC_kwDOQwI2ec4C0fFp'
-  mapping: pathname
-  reactions_enabled: true
-  emit_metadata: false
-  theme: light
-  lang: zh-CN
-
-# 👇 这一步最关键！强制把评论切换为 giscus
-post:
-  comments:
-    enable: true
-    type: giscus
-
-# 👇 添加 TG 按钮
-social:
-  telegram:
-    icon: fab fa-telegram
-    link: https://t.me/Velox95
 
 #---------------------------
 # 静态资源
@@ -358,3 +332,30 @@ static_prefix:
   discuss: https://lib.baomitu.com/discuss/1.2.1/
   hint: https://lib.baomitu.com/hint.css/2.7.0/
   moment: https://lib.baomitu.com/moment.js/2.29.4/
+  # =================================================
+# 👇 请粘贴在文件的最末尾，不要插在中间 👇
+# =================================================
+
+# 覆盖之前的评论设置
+post:
+  comments:
+    enable: true
+    type: giscus
+
+# 添加 Giscus 配置
+giscus:
+  repo: pwenxiang51-wq/my-blog
+  repo_id: 'R_kgDOQwI2eQ'
+  category: 'Announcements'
+  category_id: 'DIC_kwDOQwI2ec4C0fFp'
+  mapping: pathname
+  reactions_enabled: true
+  emit_metadata: false
+  theme: light
+  lang: zh-CN
+
+# 覆盖之前的社交设置 (注意：这会覆盖掉默认的 icon)
+social:
+  telegram:
+    icon: fab fa-telegram
+    link: https://t.me/Velox95
