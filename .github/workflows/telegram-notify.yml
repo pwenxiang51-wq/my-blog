@@ -14,12 +14,8 @@ jobs:
         with:
           to: ${{ secrets.TG_USER_ID }}
           token: ${{ secrets.TG_BOT_TOKEN }}
-          # 【重点】下面这行 format: html 我删掉了！
-          # 【重点】message 里也没用尖括号了！
+          # 关键修改：去掉 format: html，去掉所有尖括号
           message: |
-            博客更新啦！
-            
-            提交人: ${{ github.actor }}
-            说明: ${{ github.event.head_commit.message }}
-            
-            Cloudflare 正在构建中...
+             Blog Update Detected!
+             Content: ${{ github.event.head_commit.message }}
+             Check it out: https://pwenxiang.com
