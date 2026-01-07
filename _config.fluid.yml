@@ -1,7 +1,5 @@
 #---------------------------
 # Hexo Theme Fluid
-# Author: Fluid-dev
-# Github: https://github.com/fluid-dev/hexo-theme-fluid
 #---------------------------
 
 #---------------------------
@@ -181,6 +179,7 @@ post:
   banner_img_height: 70
   banner_img_mask: 0.3
   default_index_img:
+
   meta:
     author:
       enable: false
@@ -194,7 +193,7 @@ post:
     views:
       enable: false
 
-  # 👇 这里的开关已经强制改为 giscus 了！
+  # 评论区总开关 (已修复：指向 giscus)
   comments:
     enable: true
     type: giscus
@@ -262,10 +261,10 @@ about:
   name: "Velo.x"
   intro: "极客 / VPS / 探索者"
   
-  # 👇 TG 按钮：我把它加在关于页的图标里了，这是最稳的位置！
+  # TG 按钮配置区 (已添加)
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
-    - { class: "iconfont icon-telegram-fill", link: "https://t.me/Velox95", tip: "Telegram" }
+    - { class: "fab fa-telegram", link: "https://t.me/Velox95", tip: "Telegram" }
 
 page:
   banner_img: /images/article.jpg
@@ -320,7 +319,7 @@ static_prefix:
   moment: https://lib.baomitu.com/moment.js/2.29.4/
 
 #---------------------------
-# 👇 Giscus 评论配置 (已填好你的参数)
+# 评论插件配置 (Giscus)
 #---------------------------
 giscus:
   repo: pwenxiang51-wq/my-blog
