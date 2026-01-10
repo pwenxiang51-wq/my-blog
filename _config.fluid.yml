@@ -216,14 +216,6 @@ post:
     enable: true
     placement: right
     collapseDepth: 0
-
-  toc:
-    enable: true
-    placement: right
-    collapseDepth: 0
-
-  copyright:
-    enable: true
   copyright:
     enable: true
     license: 'BY'
