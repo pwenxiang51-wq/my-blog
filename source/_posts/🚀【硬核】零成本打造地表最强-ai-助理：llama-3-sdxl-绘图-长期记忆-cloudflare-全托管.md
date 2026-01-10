@@ -306,7 +306,7 @@ async function fetchGroqWithHistory(messages, env) {
 
 由于本方案涉及代码更新，为了方便大家获取最新版 Velo.x AI 核心源码，以及解决博客评论区无法显示的玄学问题，我已将本项目同步至 **GitHub**。
 
-* **项目源码**：[Velox-groqAI-Bot (v5.0 终极版)](https://github.com/Velo-x/Velox-groqAI-Bot)
-* **反馈与交流**：[点击进入 GitHub Discussions 参与讨论](https://github.com/Velo-x/Velox-groqAI-Bot/discussions)
+* **项目源码**：[Velox-groqAI-Bot (v5.0 终极版)](https://github.com/pwenxiang51-wq/Velox-groqAI-Bot)
+* **反馈与交流**：[点击进入 GitHub Discussions 参与讨论](https://github.com/pwenxiang51-wq/Velox-groqAI-Bot/discussions)
 
 **如果你觉得这个项目对你有帮助，欢迎在 GitHub 点个 ⭐ Star 鼓励一下！**
