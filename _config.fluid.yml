@@ -216,6 +216,24 @@ post:
     enable: true
     placement: right
     collapseDepth: 0
+
+    custom:
+    content_bottom: |
+      <% if (page.github_url) { %>
+      <div style="margin-top: 40px; padding: 20px; background: #f6f8fa; border-radius: 12px; border: 1px solid #d0d7de;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <h4 style="margin: 0 0 10px 0; color: #24292f;">💾 本文源码已开源</h4>
+            <p style="margin: 0; font-size: 14px; color: #57606a;">如果你对本文的技术实现感兴趣，欢迎去 GitHub 查看源码。</p>
+          </div>
+          <div style="font-size: 30px;">⚡</div>
+        </div>
+        <div style="margin-top: 15px;">
+          <a href="<%= page.github_url %>" target="_blank" style="display: inline-block; background: #2da44e; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 14px; margin-right: 10px;">⭐ 获取本项目源码</a>
+          <a href="<%= page.github_url %>/discussions" target="_blank" style="display: inline-block; background: #ffffff; color: #24292f; border: 1px solid #d0d7de; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-size: 14px;">💬 参与讨论</a>
+        </div>
+      </div>
+      <% } %>
   copyright:
     enable: true
     license: 'BY'
