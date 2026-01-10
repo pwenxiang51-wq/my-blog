@@ -84,7 +84,7 @@ font:
   letter_spacing: 0.02em
   code_font_size: 85%
 
-custom_js:
+custom_js:/js/github_promo.js
 custom_css:
 
 web_analytics:
