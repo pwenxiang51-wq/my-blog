@@ -217,7 +217,12 @@ post:
     placement: right
     collapseDepth: 0
 
-   custom:
+  toc:
+    enable: true
+    placement: right
+    collapseDepth: 0
+
+  custom:
     content_bottom: |
       <div style="margin-top: 40px; padding: 20px; background: #f6f8fa; border-radius: 12px; border: 1px solid #d0d7de;">
         <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -236,6 +241,9 @@ post:
           </a>
         </div>
       </div>
+
+  copyright:
+    enable: true
   copyright:
     enable: true
     license: 'BY'
